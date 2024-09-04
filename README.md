@@ -25,7 +25,8 @@ this project aim to perform a simple ETL processing that includes
 1. Downloading the Parch and Posey data
 2. Created a Bash script that iterates over and copies each of the CSV files
    into a PostgreSQL database, the name of the database is called posey.
-3. After which a SQL script that performs the following were created
+3. After which a SQL script that performs the following were created.
+   [Read more about it here](./scripts/sql_scripts/README.md)
     - Find a list of order IDs where either gloss_qty or poster_qty is greater
       than 4000. Only include the id field in the resulting table.
     - Write a query that returns a list of orders where the standard_qty is zero
