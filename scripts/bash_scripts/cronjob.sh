@@ -1,5 +1,7 @@
 #!/bin/bash
-cron_job="16 18 * * * /Users/user/Desktop/CDE/assignments/git/scripts/bash_scripts/transform.sh"
+
+# Cronjob scheduled to run transform script daily by 12 AM.
+cron_job="0 0 * * * ./scripts/bash_scripts/transform.sh"
 echo "Current working directory: $(pwd)"
 # Check if the cron job already exists
 (crontab -l | grep -G "$cron_job") || (
