@@ -1,15 +1,15 @@
 # ETL PROCESSES WITH BASH SCRIPT TO MANAGE CoreDataEngineers' data infrastructure
 
-this project aim to perform a simple ETL processing that includes
+This project aim to perform a simple ETL processing that includes
 
-1. **Extract**: it Download a CSV file usin curl from the internet and saved it
+1. **Extract**: it Downloads a CSV file using curl from the internet and saved it
    inside the [raw dirctory](./raw/).
 2. **Transform**: After downloading the file, a simple transformation was made
    to the file by renaming the column named Variable_code to variable_code.
-   After whch, I selected year, Value, Units, and variable_code column, and
+   After which, we selected year, Value, Units, and variable_code column, and
    saved the content of these selected columns into a file named
    2023_year_finance.csv. 2023_year_finance.csv file is saved in
-   [Transformed directory](./Transformed/). The bash script confirm that every
+   [Transformed directory](./Transformed/). The bash script confirms that every
    process ran succesfully by echoing each process.
 3. **Load:** After transformation, the transformed data was finally moved to
    [Gold Directory](./Gold/).
