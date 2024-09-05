@@ -1,18 +1,11 @@
 #!/bin/bash
 
 # Variables
-# DB_NAME="newposey"
+DB_NAME="posey"
 DB_USER="postgres"
 DB_HOST="localhost"
 DB_PORT="5432"
 CSV_DIR="../../raw/parch_posey"
-
-# sudo su - postgres
-
-read -p "Enter your database name : " DB_NAME
-
-# create database
-psql -c $DB_NAME
 
 # Iterate over each CSV file in the directory
 for file in "$CSV_DIR"/*.csv
