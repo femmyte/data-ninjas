@@ -40,3 +40,39 @@ FROM sales_reps sr
 JOIN region r ON sr.region_id = r.id
 JOIN accounts a ON sr.id = a.sales_rep_id
 ORDER BY account_name;
+
+
+#Insights
+#Find the traffic source with the highest customers traffic
+SELECT channel, COUNT(channel) 
+FROM web_events
+GROUP BY channel
+ORDER BY 2 DESC;
+
+#Find the region with the highest number of customers
+SELECT COUNT(accounts.name) AS account_count, region.name AS region 
+FROM accounts
+JOIN sales_reps
+ON sales_reps.id = accounts.sales_rep_id
+JOIN region
+ON region.id = sales_reps.region_id
+GROUP BY region
+ORDER BY account_count DESC;
+
+#Find the top ten customers who brought in the highest sales
+SELECT accounts.name, SUM(total) as totalAmount
+FROM accounts
+JOIN orders
+ON orders.account_id = accounts.id
+GROUP BY accounts.name
+ORDER BY totalAmount DESC
+LIMIT 10;
+
+#Find the top 10 buying customers
+SELECT accounts.name, count(orders.id) as no_of_orders
+FROM accounts
+JOIN orders
+ON orders.account_id = accounts.id
+GROUP BY accounts.name
+ORDER BY no_of_orders DESC
+LIMIT 10;
