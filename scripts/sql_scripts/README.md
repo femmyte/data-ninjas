@@ -1,8 +1,6 @@
 # data-ninjas
 ETL PROCESSES WITH BASH SCRIPT TO MANAGE CoreDataEngineers' data infrastructure
 
-**There are other write to come before this below**
-
 ## SQL Scripts that answers the questions posed by the manager; Ayoola.
 
 - /* Find a list of order IDs where either `gloss_qty` or `poster_qty` is greater than 4000. Only include the `id` field in the resulting table. */
